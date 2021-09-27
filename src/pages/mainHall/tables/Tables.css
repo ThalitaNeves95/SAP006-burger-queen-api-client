@@ -1,0 +1,17 @@
+.container-tables{
+    display: flex;
+    align-items: center;
+}
+
+.counter{
+    width: 100%;
+}
+
+.table-1{
+    width: 100%;
+}
+
+.sofa{
+    width: 100%;
+    transform: rotate(-90deg);
+}

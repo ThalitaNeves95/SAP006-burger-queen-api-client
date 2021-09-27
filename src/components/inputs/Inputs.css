@@ -1,0 +1,26 @@
+:root {
+    --gray-color: #c4c4c449;
+    --gray-placeholder: #C4C4C4; 
+}
+
+.inputs{
+    display: flex;
+    border-radius: 10px;
+    height: 30px;
+    width: 60%;
+    margin: 10px;
+    margin-left: 20%;
+    border: none;
+    background-color: var(--gray-color);
+    font-size: 15px;
+}
+
+input::placeholder{
+    color: var(--gray-placeholder);
+}
+
+input[type=radio]{
+    cursor: pointer;
+    width: 20px;
+    margin: 10px 14px 0 16px;
+}
