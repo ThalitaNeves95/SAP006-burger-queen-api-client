@@ -1,11 +1,14 @@
 import React from 'react';
+import notfound from '../../img/notfound.gif';
+
 import './NotFound.css';
 
-const NotFound = () => {
+export default function NotFound () {
     return (
-        <>
-         <h1> 404 ERROR - Página não encontrada</h1>
-        </>
-      );
-}
-export default NotFound
+
+        <div className="container-notfound">
+          <h1> 404 ERROR - Página não encontrada</h1>
+          <img src={notfound} alt="counter" className="notfound"/>
+        </div>
+    );
+};

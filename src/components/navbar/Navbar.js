@@ -1,17 +1,17 @@
 import React from 'react';
 import './Navbar.css';
 import LogoImg from '../images/LogoImg';
-import ButtonLogout from '../button/logout/ButtonLogout';
-import garcom from '../../img/garcom.png'
+import ButtonLogout from '../button/ButtonLogout';
 
+export default function NavBar ({value}) {
 
-export default function NavBar () {
     return(
         <div className="navbar">
             <LogoImg />
-                <img src={garcom} alt="waiter" className="waiter-icon-tables"/>
-                <p className="tables-title">Mesas</p>
+                <p className="tables-title">{value}</p>
             <ButtonLogout />
         </div>
-    )
+    );
 };
+
+// <img src={garcom} alt="waiter" className="waiter-icon-tables"/>

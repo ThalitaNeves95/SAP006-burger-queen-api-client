@@ -1,111 +1,47 @@
-import React, { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
-
-
-export const LoginWithEmail = (users) => {
-    return fetch('https://lab-api-bq.herokuapp.com/auth', {
-        method:'POST',
+const host = 'https://lab-api-bq.herokuapp.com';
+const request = (endpoint, method, body) => {
+    return fetch(`${host}${endpoint}`, {
+        method,
         headers: {
             'Content-Type': 'application/json',
             'Authentication': 'Token'
         },
-        body: JSON.stringify ({
-            "email": users.email,
-            "password": users.password,
-        }),
-    })
-        // .then((response) => response.json())
-        // .then((json) => {
-        //     const { token } = json;
-        //     return token
-        // })
+        body: JSON.stringify (body),
+    }) 
+
+}
+
+export const LoginWithEmail = (users) => {
+    return request ('/auth', 'POST', {
+        email: users.email,
+        password: users.password,
+    }) 
+    
 };
 
 export const RegisterUser = (users) => {
-    return fetch('https://lab-api-bq.herokuapp.com/users', {
-        method:'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authentication': 'Token'
-        },
-        body: JSON.stringify({
-            'name': users.name,
-            'email': users.email,
-            'password': users.password,
-            'role': users.role,
-            'restaurant': 'retro burger',
-        }),
-    })
+    return request ('/users', 'POST', {
+        name: users.name,
+        email: users.email,
+        password: users.password,
+        role: users.role,
+        restaurant: 'retro burger',
+    }) 
+    
 };
-
-
-
-// export const useEffect(() => {
-//     fetch('https://lab-api-bq.herokuapp.com/products', {
-//         headers: {
-//             accept: 'application/json',
-//             Authorization: `${token}`,
-//         },
-//     })
-
-//         .then((response) => {
-//             response.json()
-//                 .then((json) => {
-//                     setProducts(json)
-//                 })
-//         })
-// }, [token])
-
-
-
-
 
 
 
 
 // export const RegisterUser = (users) => {
-//     return fetch('https://lab-api-bq.herokuapp.com/products', {
-//         method:'GET',
+//     return fetch('https://lab-api-bq.herokuapp.com/users', {
+//         method:'POST',
 //         headers: {
 //             'Content-Type': 'application/json',
 //             'Authentication': 'Token'
 //         },
 //         body: JSON.stringify({
-//             'name': users.name,
-//             'email': users.email,
-//             'password': users.password,
-//             'role': users.role,
-//             'restaurant': 'retro burger',
+            
 //         }),
 //     })
 // };
-
-
-// export const getAllProducts = () => {
-//     fetch('https://lab-api-bq.herokuapp.com/products', {
-//       headers: {
-//         accept: 'application/json',
-//         Authorization: `${token}`,
-
-//       },
-
-//     })
-//       .then((response) => response.json())
-//       .then((json) => {
-//         const breakfast = json.filter((item) => item.type === 'breakfast');
-//         setMenuCafe(breakfast);
-//         const allDayMenu = json.filter((item) => item.type === 'all-day');
-//         setMenuAlmoco(allDayMenu);
-//       });
-//   };
-
-
-// export const RegisterSuccess = () => {
-//     return (
-//         alert('Sua conta foi criada com sucesso!')
-//     )
-// }
-
-
-
-

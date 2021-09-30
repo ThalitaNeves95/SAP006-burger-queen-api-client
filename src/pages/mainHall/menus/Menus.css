@@ -1,14 +1,20 @@
-.container-menus {
+.container-btn-menu{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
-.paragrafo{
-    font-size: 20px;
+.buttons-menu{
+    width: 30%;
+    margin: 3% 1%;
 }
 
-.construcao{
-    width: 30%;
-    display: flex;
+.btn-cardapio{
+    background: #5C3D31;
+    color: white;
+    width: 15%;
+    height: 30px;
+    font-size: 17px;
+    border-radius: 9px;
 }
