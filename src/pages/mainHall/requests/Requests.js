@@ -34,27 +34,28 @@ export default function Requests () {
 
             <div className="container-btn-menu">
                 <Button 
-                    label="Menus" 
+                    text="🍴 Menus" 
                     type="submit"
                     onClick={btnMenus} 
                     className="buttons buttons-menu"
                 /> 
                 <Button 
-                    label="Pedidos" 
+                    text="🔔 Pedidos" 
                     type="submit"
                     onClick={btnRequests} 
                     className="buttons buttons-menu"
                 /> 
                 <Button 
-                    label="Histórico" 
+                    text="📋 Histórico" 
                     type="submit"
                     onClick={btnHistoric} 
                     className="buttons buttons-menu"
                 /> 
             </div>
             <Cards />
-            
-        <Footer />
+          <Footer 
+            className="footer"
+          />
         </div>
     );
 };
