@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import NavBar from '../../../components/navbar/Navbar'
 import Button from '../../../components/button/Button';
@@ -8,15 +8,13 @@ import CartArea from '../../../components/itensMenu/CartArea';
 
 import './Menus.css';
 
-function Menus () {
+export default function Menus () {
 
     const [allProducts, setAllProducts] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
     const history = useHistory();
     const token = localStorage.getItem('userToken');
     const [itemsList, setItemsList] = useState([]);
-    const [table, setTable] = useState('1');
-    const [client, setClient] = useState('');
    
     useEffect(() => {
       fetch('https://lab-api-bq.herokuapp.com/products', {
@@ -33,19 +31,9 @@ function Menus () {
             setSelectedProducts(menus)
             return json;
           });
-    }, [token]);
-    
-    const btnMenus = (e) => {
-      e.preventDefault()
-      history.push('/menus')
-    }
+    }, []);
 
     const btnRequests = (e) => {
-      e.preventDefault()
-      history.push('/pedidos')
-    }
-
-    const btnHistoric = (e) => {
       e.preventDefault()
       history.push('/historico')
     }
@@ -75,7 +63,7 @@ function Menus () {
           )
         );
     }
-
+    
     return(
         <>
           <div>
@@ -84,49 +72,13 @@ function Menus () {
 
             <div className="container-btn-menu">
               <Button 
-                text="🍴 Menus" 
-                type="submit"
-                onClick={btnMenus} 
-                className="buttons buttons-menu" 
-              /> 
-              <Button 
-                text="🔔 Pedidos" 
-                type="submit"
-                onClick={btnRequests} 
-                className="buttons buttons-menu" 
-              /> 
-              <Button 
                 text="📋 Histórico" 
                 type="submit"
-                onClick={btnHistoric} 
-                className="buttons buttons-menu" 
+                onClick={btnRequests} 
+                className="btn-menu" 
               /> 
             </div>
-
-            <div className="container-info">
-              <label className="info-card">Mesa:
-                <select className="select-table" onChange={(e) => setTable(e.target.value)} value={table}>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                </select>  
-              </label>
-              <label className="info-card">Cliente: 
-                <input 
-                  className="input-client" 
-                  type="text" 
-                  name="nameClient" 
-                  onChange={(e) => 
-                    setClient(e.target.value)} 
-                    value={client}>
-                </input>
-              </label>
-            </div>
-
+            
             <div className="container-btn-cardapio">
               <Button 
                 text="Café da Manhã"
@@ -153,8 +105,8 @@ function Menus () {
             <CartArea 
               arrItem={itemsList}
               removeButton={removeButton}
-              addButton={addButton}
-            >
+              addButton={addButton}>
+              
             </CartArea>
             
             <div className="container-main-products">
@@ -171,7 +123,7 @@ function Menus () {
                             )
                           );
                         } else {
-                          setItemsList([...itemsList, { name: item.name, price: item.price, id: item.id, qtd: 1 }])
+                          setItemsList([...itemsList, { name: item.name, price: item.price, id: item.id, qtd: 1, flavor: item.flavor, complement: item.complement }])
                         }
                       }}
                   />
@@ -185,5 +137,3 @@ function Menus () {
         </>
     );
 };
-
-export default Menus;

@@ -2,19 +2,14 @@ import React from 'react';
 import './Style.css';
 
 
-export default function ItemCard ({id, name, price, image, onClick}) {
-  return (
- 
-      <div className="container-products">
-        <article key={id} onClick={onClick} className="products">
-          <img className="img-product" src={image} alt={`imagem do produto ${name}`}></img>
-          <p className="name-product">{name}</p>
-          <p className="price">R${price},00</p>
-        </article>
-      </div>
- )
-};
+export default function ItemCard ({ id, name, price, image, flavor, complement, onClick }) {
 
-/*    <p>{flavor}</p>
-      <p>{complement}</p>
-*/
+  return (
+    <div key={id} onClick={onClick} className="products">
+      <img className="img-product" src={image} alt={`imagem do produto ${name}`}></img>
+      <p className="info-product">{name} {flavor}</p>
+      <p className="info-product">{complement ? `+ ${complement}` : ''}</p>
+      <p className="price">R${price},00 🛒</p>
+    </div>
+  );
+};

@@ -1,36 +1,39 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { TotalOrders, UpdateOrderStatus } from '../../../services/Products';
-import NavBar from '../../../components/navbar/Navbar'
-import Button from '../../../components/button/Button';
-import Footer from '../../../components/footer/Footer';
-import Orders from '../../../components/itensMenu/Orders';
+import { TotalOrders, UpdateOrderStatus } from '../../services/Products';
+import NavBar from '../../components/navbar/Navbar'
+import Footer from '../../components/footer/Footer';
+import Orders from '../../components/itensMenu/Orders';
 
-export default function Requests () {
-    const history = useHistory();
+export default function Kitchen () {
     const [allOrders, setAllOrders] = useState([]);
     const token = localStorage.getItem('userToken');
+    
+    useEffect(() => {
+      TotalOrders()
+      .then(response => response.json())
+      .then((json) => { 
+        const sortById = json.sort((itemA, itemB) => itemB.id - itemA.id);
+        setAllOrders(sortById)
+        console.log(json)                               
+        
+      });
+    }, []);
+// ver para recarregar a pagina quando mudar o status
 
-      const btnMenus = (e) => {
-        e.preventDefault()
-        history.push('/menus')
-      }
-
-      useEffect(() => {
-            TotalOrders()
-            .then(response => response.json())
-            .then((json) => { 
-              const sortById = json.sort((itemA, itemB) => itemB.id - itemA.id);
-              setAllOrders(sortById)
-              console.log(json)  
-            });
-      }, []);
-
-      const updateStatus = (item) => {
-
+      const updateOrderToProcessing = (item) => {
+        console.log(item)
         const orderId = item.id;
         const update = () => setAllOrders([...allOrders]);
-        if (item.status === 'ready') {
+        if (item.status === 'pending') {
+          UpdateOrderStatus(orderId, 'Preparando...')
+            .then((response) => {
+              const exist = allOrders.find((client) => client.id === response.id);
+              if (exist) {
+                update();
+              }
+            });
+             
+        } else {
           UpdateOrderStatus(orderId, 'Ag. Servir')
             .then((response) => {
               const exist = allOrders.find((client) => client.id === response.id);
@@ -38,31 +41,20 @@ export default function Requests () {
                 update();
               }
             });
-        } else {
-          UpdateOrderStatus(orderId, 'Finalizado')
-            .then((response) => {
-              const exist = allOrders.find((client) => client.id === response.id);
-              if (exist) {
-                update();
-              }
-            });
-        } 
+        }
       };
 
     return(
         <div>
+
             <div>
                 <NavBar />
             </div>
 
             <div className="container-btn-menu">
-                <Button 
-                    text="🍴 Menus" 
-                    type="submit"
-                    onClick={btnMenus} 
-                    className="btn-menu"
-                /> 
+                <p className="pedidos"> Cozinha | 🔔 Pedidos </p> 
             </div>
+
             {allOrders.map((item) => (
               <Orders 
                 key={item.id}
@@ -73,7 +65,7 @@ export default function Requests () {
                 createdAt={item.createdAt}
                 status={item.status}
                 user_id={item.user_id}
-                statusClick={updateStatus}
+                statusClick={updateOrderToProcessing}
               />
             ))}
             

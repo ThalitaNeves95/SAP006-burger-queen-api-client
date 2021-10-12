@@ -132,8 +132,16 @@ body{
 }
 /* FIM PÁGINA DE REGISTO */
 
+.pedidos{
+    font-weight: 600;
+    font-size: 25px;
+    border-top: solid 1px var(--red-color);
+    border-bottom: solid 1px var(--red-color);
+}
 
-@media screen and (max-width: 320px) {
-
-
+.pedidos:hover{
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border-top: solid 1px var(--white-color);
+    border-bottom: solid 1px var(--white-color);
 }

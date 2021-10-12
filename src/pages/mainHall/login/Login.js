@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useHistory, Link } from 'react-router-dom';
 import { LoginWithEmail } from '../../../services/Auth';
@@ -9,7 +9,6 @@ import Footer from '../../../components/footer/Footer';
 import Title from '../../../components/title/Title';
 
 import '../Style.css';
-
 
 export default function Login() { 
     const [email, setEmail] = useState('');
@@ -37,7 +36,6 @@ export default function Login() {
             const token = returnJson.token
             const name = returnJson.name
             const roleUser = returnJson.role
-            console.log(response)
 
             if (token) {
                 localStorage.setItem('userName', name)
@@ -51,14 +49,13 @@ export default function Login() {
                     history.push('/menus')
                 } else {
                     alert('Login com Cozinha')
-                    history.push('/preparacao')
+                    history.push('/cozinha')
                 }                  
             } 
-            if(response.status !== 200){
-                throw new Error(response.status)  
-            }
+            
         } catch (json) {
-            history.push('/notfound') 
+            history.push('/') 
+            alert('Insira um e-mail e senha válidos')
             // colocar o modal aqui depois   
         } 
     }
