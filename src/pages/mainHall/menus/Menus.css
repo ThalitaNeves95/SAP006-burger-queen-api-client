@@ -14,9 +14,10 @@
 
 .container-btn-menu{
     display: flex;
-    flex-direction: row;
+    height: 85px;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .btn-menu{
@@ -30,6 +31,7 @@
     border-left: none;
     border-right: none;
     background: none;
+    cursor: pointer;
 }
 
 .btn-menu:hover{
@@ -40,7 +42,6 @@
 }
 
 .container-btn-cardapio{
-    margin: 1% 0;
     display: flex;
     justify-content: space-around;
 }
@@ -49,12 +50,13 @@
     background: var(--brown-color);
     color: var(--white-color);
     width: 20%;
-    height: 35px;
-    font-size: 23px;
+    height: 30px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     border-radius: 9px;
     border: none;
     margin: 0 7px;
+    cursor: pointer;
 }
 
 .btn-cardapio:hover {
@@ -69,7 +71,6 @@
     margin: 2% 0;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -86,3 +87,29 @@
     font-family: 'Roboto', sans-serif;
     background: none;
 }
+
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .btn-cardapio{
+        
+    }
+}
+
+
+
+
+
+/* Desktop grande
+@media (min-width: 1200px) {
+   estilos aqui
+} */
+
+/* Telefones em paisagem e abaixo 
+@media (max-width: 480px) { 
+    estilos aqui 
+} */
+
+/* Telefones em paisagem a tablet em retrato
+@media (max-width: 767px) {
+    estilos aqui
+} */

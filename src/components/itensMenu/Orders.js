@@ -22,8 +22,6 @@ export default function Orders({
   const difference = Math.abs(dataUpdate) - dataCreated;
   const minutes = Math.floor(difference / 1000 / 60);
 
-  
-
   return (
     <div className="container-orders">
       <div className="container-status">

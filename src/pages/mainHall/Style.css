@@ -25,7 +25,7 @@
     height: 570px;
     border-radius: 20px;
     align-items: center;
-    margin: 20% 25%;
+    margin: 7% 25%;
     box-shadow: 0px 0px 20px 5px var(--shadow-color);
 }
 
@@ -51,6 +51,7 @@
     font-size: 20px;
     border-radius: 15px;
     margin: 4% 0 0 0;
+    cursor: pointer;
 }
 
 .buttons:hover{
@@ -59,6 +60,7 @@
 
 .btn-back{
     background-color: var(--orange-color);
+    cursor: pointer;
 }
 
 .inputs{
@@ -144,4 +146,12 @@ body{
     color: var(--white-color);
     border-top: solid 1px var(--white-color);
     border-bottom: solid 1px var(--white-color);
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 768px) { 
+
+    .container-form {
+        margin: 27% 25%;
+    }
 }
