@@ -30,7 +30,7 @@ export default function Orders ({ id, client_name, table, status, createdAt, use
                         <hr></hr>
                 </div>
                 <div className="container-info-orders">
-                    <p>#{id} | Mesa {table} | {client_name}</p>
+                    <p>#{id} | Mesa: {table} | {client_name}</p>
                     <p>Atendente: {user_id}</p>
                 </div>
 
