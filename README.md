@@ -6,6 +6,16 @@
 <h2 align="center">Retro Burger</h2>
 <h3 align="center">Para acessar a aplicação, clique <a href="https://retro-burger-006.vercel.app/" target="_blank" style="color:#97CE4C" title="Clique aqui!">Aqui 🚀.</a></h3>
 
+|Login: Salão                 ||
+| --------------------------- |------------------- |
+|E-mail: teste@cozinha.com.br ||
+|Senha: 252512                ||
+
+|Login: Cozinha                ||
+| -------------------          | ------------------- |
+|E-mail: teste@atendimento.com ||
+|Senha: 252512                 ||
+
 <!--<h1 align="center">
   <img src="" width="180">
   colocar gif da aplicação aqui
