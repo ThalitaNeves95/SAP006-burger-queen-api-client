@@ -1,4 +1,4 @@
-import Button from '../../components/button/Button.js';
+import Button from './Button'
 import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event'
 // userEvent - simula evento do DOM
