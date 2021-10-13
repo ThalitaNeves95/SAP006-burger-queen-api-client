@@ -4,12 +4,12 @@
 
 <h1 align="center">🍔</h1>
 <h2 align="center">Retro Burger</h2>
-<h3 align="center">Para acessar a aplicação, clique <a href="" target="_blank" style="color:#97CE4C" title="Clique aqui!">Aqui 🚀.</a></h3>
+<h3 align="center">Para acessar a aplicação, clique <a href="https://retro-burger-006.vercel.app/" target="_blank" style="color:#97CE4C" title="Clique aqui!">Aqui 🚀.</a></h3>
 
-<h1 align="center">
+<!--<h1 align="center">
   <img src="" width="180">
-  <!-- colocar gif da aplicação aqui -->
-</h1>
+  colocar gif da aplicação aqui
+</h1> -->
 
 ## 📑 Índice
 - [1. Sobre o Projeto](#1-sobre)
