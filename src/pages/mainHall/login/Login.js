@@ -45,18 +45,14 @@ export default function Login() {
                 const role = roleUser
                 
                 if(role === 'salon') {
-                    alert('Login com Salão')
                     history.push('/menus')
                 } else {
-                    alert('Login com Cozinha')
                     history.push('/cozinha')
                 }                  
             } 
             
         } catch (json) {
             history.push('/') 
-            alert('Insira um e-mail e senha válidos')
-            // colocar o modal aqui depois   
         } 
     }
 

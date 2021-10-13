@@ -22,7 +22,7 @@ export default function Orders({
   const difference = Math.abs(dataUpdate) - dataCreated;
   const minutes = Math.floor(difference / 1000 / 60);
 
-  console.log(status, "order status");
+  
 
   return (
     <div className="container-orders">

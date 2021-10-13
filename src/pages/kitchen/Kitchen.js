@@ -16,7 +16,7 @@ export default function Kitchen() {
       .then((json) => {
         const sortById = json.sort((itemA, itemB) => itemB.id - itemA.id);
         setAllOrders(sortById);
-        console.log(json);
+        
       });
   };
 

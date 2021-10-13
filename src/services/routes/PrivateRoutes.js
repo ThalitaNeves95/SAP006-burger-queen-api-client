@@ -14,4 +14,3 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 export default PrivateRoute;
 
-// ver se é do salao ou da cozinha (role)
