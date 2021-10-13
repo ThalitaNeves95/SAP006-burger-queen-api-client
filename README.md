@@ -42,16 +42,16 @@ O projeto foi desenvolvido utilizando Vanilla JavaScript, HTML5, CSS3, React e u
 ## 3. 💺 EXPERIÊNCIA DOS USUÁRIOS
 ## Histórias de Usuários:
 <h1 align="center">
-  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/1_quQ7j9aaDa.PNG?updatedAt=1634085240193" height="180">
+  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/1_quQ7j9aaDa.PNG?updatedAt=1634085240193" height="200">
 </h1>
 <h1 align="center">
-  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/2_IAv92Pss3.PNG?updatedAt=1634085239998" height="180">
+  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/2_IAv92Pss3.PNG?updatedAt=1634085239998" height="200">
 </h1>
 <h1 align="center">
-  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/3_81wZTWYl4.PNG?updatedAt=1634085239964" height="180">
+  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/3_81wZTWYl4.PNG?updatedAt=1634085239964" height="200">
 </h1>
 <h1 align="center">
-  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/4_wSbD7AgcE.PNG?updatedAt=1634085239895" height="180">
+  <img src="https://ik.imagekit.io/llneva6qvex/Retrô_Burguer/4_wSbD7AgcE.PNG?updatedAt=1634085239895" height="200">
 </h1>
 
 ### 4. 🎨 LAYOUT OK

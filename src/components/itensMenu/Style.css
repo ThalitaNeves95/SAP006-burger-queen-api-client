@@ -256,6 +256,12 @@
     margin: 1% 0;
     border: none;
     background-color: var(--yellow-color);
+    border: outset;
+    border-color: var(--orange-color);
+}
+
+.btn-status:hover{
+    background-color: var(--orange-color);
 }
 /* FIM DOS CARDS DE PEDIDOS (AQR:ORDERS)*/
 
